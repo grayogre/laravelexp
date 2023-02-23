@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Tweet;
 
-class TweetSeeder extends Seeder
+class TweetsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
