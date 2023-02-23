@@ -14,7 +14,7 @@ class TweetService
     // check my tweet
     public function checkOwnTweet(int $userId, int $tweetId): bool
     {
-        $tweet = Tweet::where('id', $userId)->first();
+        $tweet = Tweet::where('id', $tweetId)->first();
         if(!$tweet) {
             return false;
         }
