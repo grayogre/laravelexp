@@ -13,19 +13,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // $schedule->command('inspire')->hourly();
-        // 毎分
-        $schedule->command('sample-command')->everyMinute()
-            ->emailOutputTo('info@example.com');
-        // 毎時
-        $schedule->command('sample-command')->hourly();
-        // 毎時8分
-        $schedule->command('sample-command')->hourlyAt(8);
-        // 毎日
-        $schedule->command('sample-command')->daily();
-        // 毎日16時
-        $schedule->command('sample-command')->dailyAt('16:00');
-        // 毎日16:15(cron表記)
-        $schedule->command('sample-command')->cron('15 16 * * *');
+        $schedule->command('mail:send-daily-tweet-count-mail')
+            ->dailyAt('18:35');
     }
 
     /**
