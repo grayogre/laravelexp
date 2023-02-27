@@ -6,7 +6,7 @@ on:
 
 env:
   DB_USERNAME: root
-  DB_PASSWORD: password
+  DB_PASSWORD: root
   MAIL_FROM_ADDESS: info@example.com
 
 jobs:
