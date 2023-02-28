@@ -46,9 +46,11 @@ jobs:
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
       - name: Generate key
         run: php artisan key:generate --env testing
-      - name: Set hostname
-        run: sudo echo "127.0.0.1 mysql" | sudo tee -a /etc/hosts
-      - name: Grant user
-        run: ./testgrant.sh
+      - name: Migrate
+        env:
+          DB_HOST: 127.0.0.1
+        run: php artisan migrate
       - name: Excecute test (Unit and Feature tests) via PHPUnit
+        env: 
+          DB_HOST: 127.0.0.1
         run: vendor/bin/phpunit
