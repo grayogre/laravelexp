@@ -49,7 +49,7 @@ jobs:
       - name: Migrate
         env:
           DB_HOST: 127.0.0.1
-        run: php artisan migrate --database=testing --env=testing
+        run: php artisan migrate --env=testing
       - name: Excecute test (Unit and Feature tests) via PHPUnit
         env: 
           DB_HOST: 127.0.0.1
